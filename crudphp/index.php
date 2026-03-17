@@ -1,3 +1,12 @@
+<?php
+require 'db.php';
+require 'functions.php';
+requireLogin($pdo);
+?>
+<!DOCTYPE html>
+<html>
+<head><title>Add E-Resource</title></head>
+<body>
 <h2>Add E-Resource</h2>
  
 <form method="post" action="create.php">
@@ -15,5 +24,7 @@
     <button type="submit">Save</button>
 </form>
  
-<a href="read.php">View E-Resources</a>
- 
+<a href="read.php">View E-Resources</a> | <a href="logout.php">Logout</a>
+</body>
+</html>
+

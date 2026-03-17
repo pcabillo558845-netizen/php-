@@ -1,6 +1,7 @@
 <?php
 require 'db.php';
 require 'functions.php';
+requireLogin($pdo);
  
  
 $id = $_GET['id'];
@@ -42,8 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: read.php");
 }
 ?>
- 
- 
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
 <form method="post">
     Title: <input type="text" name="title" value="<?= $data['title'] ?>"><br>
     Resource Type:
@@ -57,3 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Stock: <input type="number" name="stock" min="0" value="<?= $data['stock'] ?>"><br>
     <button type="submit">Update</button>
 </form>
+<br><a href="read.php">Back</a> | <a href="logout.php">Logout</a>
+</body>
+</html>
+

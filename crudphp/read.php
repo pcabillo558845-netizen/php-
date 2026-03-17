@@ -1,12 +1,16 @@
 <?php
 require 'db.php';
+require 'functions.php';
+requireLogin($pdo);
 $stmt = $pdo->query("SELECT * FROM eresources ORDER BY id DESC");
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
- 
- 
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
 <h2>E-Resources List</h2>
-<a href="index.php">Add New</a>
+<a href="index.php">Add New</a> | <a href="logout.php">Logout</a>
  
  
 <table border="1" cellpadding="8">
@@ -34,3 +38,6 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </tr>
 <?php endforeach; ?>
 </table>
+</body>
+</html>
+

@@ -1,6 +1,7 @@
 <?php
 require 'db.php';
 require 'functions.php';
+requireLogin($pdo);
  
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,3 +32,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: read.php");
 }
 ?>
+
